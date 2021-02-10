@@ -11,20 +11,20 @@ HIGH = "HIGH"
 APP_PATH = os.path.dirname(os.path.abspath(__file__))
 
 def setmode(mode):
-    print("GPIO Mode Set: " + str(mode))
+    #print("GPIO Mode Set: " + str(mode))
     return
 
 
 def setwarnings(w):
-    print("GPIO Warnnig Set: " + str(w))
+    #print("GPIO Warnnig Set: " + str(w))
     return
 
 
 def setup(pins, mode):
-    print("GPIO Setup. Pins " + str(pins) + " set to " + str(mode))
+    #print("GPIO Setup. Pins " + str(pins) + " set to " + str(mode))
     for pin in pins:
         _db[pin]={"mode":mode, "state" : "LOW"}
-    print (_db)
+    #print (_db)
     _save_db()
     return
 
@@ -32,13 +32,13 @@ def setup(pins, mode):
 def input(pin):
     _load_db()
     pin=str(pin)
-    print ("Input " + _db[pin]["state"])
+    #print ("Input " + _db[pin]["state"])
     return _db[pin]["state"]
 
 
 def output(pins, states):
     _load_db()
-    print("GPIO Output. Pins " + str(pins) + " set to " + str(states))
+    #print("GPIO Output. Pins " + str(pins) + " set to " + str(states))
 
     # Set all pin to the same state
     if isinstance(states, str):
@@ -53,7 +53,7 @@ def output(pins, states):
     else:
         print("Invalid call. Pins list is not consistent with States list")
 
-    print(_db)
+    #print(_db)
     _save_db()
     return
 
