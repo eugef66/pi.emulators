@@ -3,6 +3,7 @@ import os, json
 
 _db = {}
 
+
 BCM = "BCM"
 OUT = "OUT"
 LOW = "LOW"
@@ -66,8 +67,8 @@ def cleanup():
 
 def _load_db():
     global _db
-    if (os.path.exists(APP_PATH + "/db.json")):
-        with open(APP_PATH + '/db.json', 'r') as db_file:
+    if (os.path.exists(APP_PATH + "/pins.json")):
+        with open(APP_PATH + '/pins.json', 'r') as db_file:
             _db = json.load(db_file)
     else:
         _db = {}
@@ -75,7 +76,7 @@ def _load_db():
     return
 
 def _save_db():
-    with open(APP_PATH + "/db.json", "w+") as db_file:
+    with open(APP_PATH + "/pins.json", "w+") as db_file:
         db_file.write(json.dumps(_db, indent=4))
     return
 

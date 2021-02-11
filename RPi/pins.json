@@ -1,0 +1,14 @@
+{
+    "2": {
+        "mode": "OUT",
+        "state": "LOW"
+    },
+    "17": {
+        "mode": "OUT",
+        "state": "LOW"
+    },
+    "3": {
+        "mode": "OUT",
+        "state": "LOW"
+    }
+}
