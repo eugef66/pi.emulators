@@ -22,7 +22,9 @@ def setwarnings(w):
 
 def setup(pins, mode):
     #print("GPIO Setup. Pins " + str(pins) + " set to " + str(mode))
+    _load_db()
     for pin in pins:
+        pin=str(pin)
         _db[pin]={"mode":mode, "state" : "LOW"}
     #print (_db)
     _save_db()
@@ -55,8 +57,6 @@ def output(pins, states):
 
     #print(_db)
     _save_db()
-    return
-
     return
 
 
